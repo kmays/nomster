@@ -1,5 +1,7 @@
 @import "bootstrap";
 
+
+
 .booyah-box{
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -27,4 +29,11 @@ body {
   background: image_url('memphis-mini-dark.png');
   box-shadow: 0px 1px 3px #2a2a2a;
 
+}
+
+.navbar-inverse .navbar-brand {
+  color: #48A76F;
+  font-family: 'kaushan_scriptregular', sans-serif;
+  font-size: 26px;
+  
 }
