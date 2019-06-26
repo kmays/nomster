@@ -29,7 +29,26 @@
               <% end %>
           </li>
         </ul>
+        <!-- Code to display if the user is logged in -->
+        <ul class="navbar-nav">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <!-- this code signs the user out when clicked -->
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+           <!-- Code for a user that is not signed in, to sign in -->
+           <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <!-- Sign up option next to sign in -->
+          <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
+        </li>
+      <% end %>
+    </ul>
       </div>
+    
     </nav>
     <!-- Devise alerts code with bootstrap styling-->
     <% if notice.present? %>
