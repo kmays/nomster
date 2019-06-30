@@ -1,6 +1,7 @@
 class PlacesController < ApplicationController
   # Code that requires a user to be logged in only for the new and create actions
-before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @places = Place.all.paginate(page: params[:page], per_page: 3)
   end
@@ -36,16 +37,18 @@ end
 
   def destroy
     @place = Place.find(params[:id])
+     if @place.user != current_user
+    return render plain: 'Not Allowed', status: :forbidden
+  end
+
     @place.destroy
     redirect_to root_path
-  end
+ end
+
 
   private
 
   def place_params
     params.require(:place).permit(:name, :description, :address)
   end
-  
-
-
-end
+  end
