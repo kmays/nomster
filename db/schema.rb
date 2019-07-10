@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_07_09_232815) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.text "message"
+    t.text "caption"
     t.integer "place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
