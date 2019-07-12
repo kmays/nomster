@@ -133,7 +133,7 @@
 <% @place.photos.each do |photo| %>
   <div class="col-12 col-sm-6">
     <% if photo.picture.present? %>
-    <%= image_tag photo.picture.url style: 'width: 10%; height: 10%' %>
+    <%= image_tag photo.picture.url %>
     <% end %>
     
     <small><%= photo.caption %></small>
